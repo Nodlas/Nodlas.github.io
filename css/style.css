@@ -25,6 +25,8 @@ main {
 button {
     font-size: 20vw;
     border-radius: 1rem;
+    background-color: white;
+    color: black;
 }
 
 button:focus {
@@ -42,7 +44,7 @@ main input{
     margin-bottom:10px;
     margin-top: 5px;
     background-color: black;
-    color: green;
+    color: lime;
     text-align: right;
     padding: 10px 4px 10px 4px;
     font-family: lcd;
