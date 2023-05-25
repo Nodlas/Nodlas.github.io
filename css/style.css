@@ -27,6 +27,7 @@ button {
     border-radius: 1rem;
     background-color: white;
     color: black;
+    border-color: gray;
 }
 
 button:focus {
