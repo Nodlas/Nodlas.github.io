@@ -54,17 +54,19 @@ function buttonClick(e) {
  */
 function addDigit(digit) {
     if(check) {
-        document.getElementById('lcd').value = ''
+        lcd.value = ''
         check = false;
     }
-    document.getElementById('lcd').value += digit;
+    lcd.value += digit;
 }
 
 /**
  * Lägger till decimaltecken
  */
 function addComma() {
-    document.getElementById('lcd').value += '.';
+    if(!lcd.value.includes('.')){
+        lcd.value += '.';
+    }
 }
 
 /**
@@ -76,19 +78,19 @@ function setOperator(operator) {
     check = true;
     switch(operator) {  //Ändrar värdet i displayn till en av operatorerna och sätter arithmetic till en operator
         case 'add':
-            document.getElementById('lcd').value = '+'; 
+           lcd.value = '+'; 
             arithmetic = '+';
             break;
         case 'sub':
-            document.getElementById('lcd').value = '-';
+            lcd.value = '-';
             arithmetic = '-';
             break;
         case 'mul':
-            document.getElementById('lcd').value = 'x';
+            lcd.value = 'x';
             arithmetic = 'x';
             break;
         case 'div':
-            document.getElementById('lcd').value = '/';
+            lcd.value = '/';
             arithmetic = '/';
             break;
     }
@@ -98,9 +100,9 @@ function setOperator(operator) {
  * Beräknar ovh visar resultatet på displayen.
  */
 function calculate() {
-    let counting = document.getElementById('lcd').value;    //Sparar nuvarande värdet i displayn
+    let counting = lcd.value;    //Sparar nuvarande värdet i displayn
     let svar = conversion(memory,counting);
-    document.getElementById('lcd').value = svar;
+    lcd.value = svar;
 }
 
 function conversion(first,second) {
